@@ -1,10 +1,10 @@
 import argparse
-
-parser = argparse.ArgumentParser(description="ввод чисел массива")
-parser.add_argument("file", help="1 parametr - путь к файлу с числами массива")
+import sys
+#parser = argparse.ArgumentParser(description="ввод чисел массива")
+#parser.add_argument("file", help="1 parametr - путь к файлу с числами массива")
 # Считываем числа из файла и записываем их в массив
-args = parser.parse_args()
-file = args.file
+#args = parser.parse_args()
+file = sys.argv[1]
 with open(file, 'r') as file:
     nums = [int(line) for line in file]
 
