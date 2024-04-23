@@ -1,6 +1,7 @@
 import math
-circle_file = 'circle.txt'
-points_file = 'points.txt'
+import sys
+circle_file = sys.argv[1]
+points_file = sys.argv[2]
 
 # Функция для определения положения точки относительно окружности
 def check_point(px, py, cx, cy, r):
@@ -22,6 +23,11 @@ with open(circle_file, 'r') as file:
 # Считываем координаты точек из файла
 with open(points_file, 'r') as file:
     points = [list(map(float, line.split())) for line in file]
+
+# Проверяем положение каждой точки и выводим результат
+for px, py in points:
+    result = check_point(px, py, cx, cy, r)
+    print(result)
 
 # Проверяем положение каждой точки и выводим результат
 for px, py in points:
