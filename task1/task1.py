@@ -1,11 +1,9 @@
 import argparse
+import sys
 
-parser = argparse.ArgumentParser(description="ввод интервала и числа кругового массива")
-parser.add_argument("n", help="1 parametr - число массива n")
-parser.add_argument("m", help="2 parametr - интервал")
-args = parser.parse_args()
-n = int(args.n)
-m = int(args.m)
+
+n = int(sys.argv[1])
+m = int(sys.argv[2])
 array = m * [int(i) for i in range(1, n + 1)]
 array.append(1)
 print(array)
